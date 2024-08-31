@@ -10,3 +10,12 @@ button{
     justify-content: center;
     align-items: center;
 }
+
+ul>li{
+    cursor: pointer;
+}
+
+.curr{
+    text-decoration: underline;
+    color: rgb(203, 106, 122);
+}
