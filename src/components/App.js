@@ -80,10 +80,10 @@ const App = ()=>{
       
       const[state,setState] = useState(mainState);
       const[category,setCategory]= useState("all");
-      const doSomething =(cat)=>{
+      const doSomething =(cat,btn)=>{
             setCategory(category);
            document.querySelector(".curr").classList.remove("curr");
-           document.getElementById(cat).classList.add("curr");
+           document.getElementById(btn).classList.add("curr");
            setState(mainState.filter((ele)=>{
                 if(cat==="all")return true;
                 return ele.category===cat;
@@ -97,10 +97,10 @@ const App = ()=>{
                 <h1 style={{textDecoration:"underline"}}>Our Menu</h1>
                 <div>
                     <ul  style={{listStyleType:"none",display:"flex",gap:"20px"}}>
-                        <li className="curr" id="all" onClick={()=>{doSomething("all");}}>All</li>
-                        <li id="breakfast" onClick={()=>{doSomething("breakfast")}}>BreakFast</li>
-                        <li id="lunch" onClick={()=>{doSomething("lunch")}}>Lunch</li>
-                        <li id="shakes" onClick={()=>{doSomething("shakes")}}>Shakes</li>
+                        <li className="curr" id="main" onClick={()=>{doSomething("all","main");}}>All</li>
+                        <li id="filter-btn-1" onClick={()=>{doSomething("breakfast","filter-btn-1")}}>BreakFast</li>
+                        <li id="filter-btn-2" onClick={()=>{doSomething("lunch","filter-btn-2")}}>Lunch</li>
+                        <li id="filter-btn-3" onClick={()=>{doSomething("shakes","filter-btn-3")}}>Shakes</li>
                     </ul>
                 </div>
                 <div style={{display:"grid",gridTemplateColumns:"1fr 1fr"}}>
